@@ -1,0 +1,60 @@
+body{
+	height: 100%;
+	width: 100%;
+}
+
+.fc .fc-toolbar > * > *{
+	margin-left: 0px;
+}
+
+.fc-prev-button{
+	width: 90px;
+}
+.fc-next-button{
+	width: 90px;
+}
+
+.fc-month-button{
+	width: 80px;
+}
+
+.fc-basicWeek-button{
+	width: 80px;
+}
+
+.fc-basicDay-button{
+	width: 80px;
+}
+
+.container{
+	margin-left: 40%;
+}
+
+.sidenav{
+	text-align: center;
+	text-decoration: none;
+	font-family: Helvetica,sans-serif;
+	font-size: 20px;
+	height: 108%;
+	width: 100px;
+	position: absolute;
+	z-index: 1;
+	top: 55px;
+	background-color: #343a40;
+	overflow-x: hidden;
+	padding-top: 20px;
+}
+
+.sidenav a{
+	color: #fff;
+	display: block;
+}
+
+.sidenav a:hover{
+	text-decoration: none;
+	color: #f1f1f1;
+}
+
+#calendar{
+	margin-left: 3%;
+}

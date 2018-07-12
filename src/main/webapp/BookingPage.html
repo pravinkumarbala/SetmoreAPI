@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Booking Page</title>
+
+	<!-- CSS Libraries -->
+	<link rel="stylesheet" type="text/css" href="CSS/bookingPage.css">
+	<link rel="stylesheet" type="text/css" href="JSLibs/Bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="JSLibs/Bootstrap/css/bootstrap-datetimepicker.min.css">
+
+</head>
+<body class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+	<div id="Meeting" class="container">
+		<h1>Meeting Room</h1>
+
+		<!-- Booking Page Container -->
+		<div id="BookingPageContainer">
+			
+			<!-- Meeting Room -->
+			<div id="room">
+				<h3>Select Meeting Room</h3>
+
+				<!-- Room Template -->
+				<ul id="meetingRoom">
+					<script type="text/template" id="meetingRoomList">		
+						<li class="meetingRooms" room-id=<%= key %>>
+							<%= first_name %> <%= last_name %>
+						</li><br>
+					</script>
+				</ul>
+			</div>
+			
+			<!-- Meeting Type -->
+			<div id="type" style="display: none;">
+				<h3>Select Meeting Type</h3>
+
+				<!-- Type Template -->
+				<ul id="meetingType">
+					<script type="text/template" id="meetingTypeList">
+						<li class="meetingTypes" type_id=<%= key %> service_duration=<%= duration %>>
+							<%= service_name %>
+						</li><br>
+					</script>
+				</ul>
+			</div>
+			
+			<!-- Time Slot -->
+			<div id="time-slot" style="display: none;">
+				
+				<h3>Select Time Slot</h3>
+				<div class="form-inline">
+
+					<!-- Calendar -->
+					<div class="form-group">
+						<div class="col-xl-3 col-lg-3 col-md-3 col-sm-3">
+							<input type="hidden" id="hiddenDate">
+							<div id="datetimepicker"></div>
+						</div>
+					</div>
+
+					<!-- Slot Template -->
+					<div class="form-group">
+						<div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+							<div id="meetingTimeSlot" class="list-group form-inline" type="none">
+								<ul class="form-group" id="morningMeetingTimeSlot">Morning Slot</ul>
+								<ul class="form-group" id="noonMeetingTimeSlot">Noon Slot</ul>
+								<ul class="form-group" id="eveningMeetingTimeSlot">Evening slot</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- User Information -->
+			<div class="col-xl-9 col-lg-9 col-md-9 col-sm-9" id="user-detail" style="display: none;">
+				<h3>User Information</h3>
+				<form>
+					<!-- Name -->
+					<div class="form-group row">
+						<label for="username" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label">Name</label>
+						<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<img src="Image/Icon/glyphicons-4-user.png">
+									</span>
+								</div>
+								<input type="text" class="form-control" id="username" placeholder="Name" required>
+							</div>
+						</div>
+					</div>
+
+					<!-- Email Address -->
+					<div class="form-group row">
+						<label for="email_address" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label">Email</label>
+						<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										@
+									</span>
+								</div>
+								<input type="email" class="form-control" id="email_address" placeholder="Email address" required>
+							</div>
+						</div>
+					</div>
+
+					<!-- Phone Number -->
+					<div class="form-group row">
+						<label for="phone_number" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label">Phone#</label>
+						<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<img src="Image/Icon/glyphicons-164-iphone.png">
+									</span>
+								</div>
+								<input type="number" class="form-control" id="phone_number" placeholder="Phone Number" required>
+							</div>
+						</div>
+					</div>
+
+					<!-- Invite People -->
+					<div class="form-group row">
+						<label for="invite" class="col-xl-2 col-lg-2 col-md-2 col-sm-2 col-form-label">Invite</label>
+						<div class="col-xl-7 col-lg-7 col-md-7 col-sm-7">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<img src="Image/Icon/glyphicons-44-group.png">
+									</span>
+								</div>
+								<input type="search" class="form-control" id="invite" placeholder="Invite people for the meeting">
+							</div>
+						</div>
+					</div>
+
+					<!-- Dropdown list -->
+					<div class="form-group col align-self-center">
+						<ul id="invitePeople"></ul>
+					</div>
+
+					<!-- List of people for Meeting -->
+					<div class="form-group row">
+						<label class="col-xl-1 col-lg-1 col-md-1 col-sm-1 col-form-label">List </label>
+						<div class="col-xl-8 col-lg-8 col-md-8 col-sm-8">
+							<ul id="inviteList" type="none"></ul>
+						</div>
+					</div>
+
+					<input type="button" class="btn btn-dark" value="Book Now" id="bookMeeting">
+				</form>
+			</div>
+			
+			<!-- Status -->
+			<div id="appointment-status" style="display: none;">
+				<h3>Booking Status</h3>
+				<form>
+					<div class="form-group row">
+						<label for="appointmentStatus" class="col-form-label form-control col-xl-2 col-lg-2 col-md-2 col-sm-2"> Status</label>
+						<div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+							<div class="input-group">
+								<div class="input-group-prepend">
+									<span class="input-group-text">
+										<img src="Image/Icon/glyphicons-479-blackboard.png">
+									</span>
+								</div>
+								<input type="text" class="form-control" id="appointmentStatus" readonly>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</div>
+
+	<!-- General Libraries -->
+	<script type="text/javascript" src="JSLibs/jquery.min.js"></script>
+	<script type="text/javascript" src="JSLibs/Bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="JSLibs/Bootstrap/js/bootstrap-datetimepicker.min.js"></script>
+	<script type="text/javascript" src="JSLibs/underscore-min.js"></script>
+	<script type="text/javascript" src="JSLibs/backbone-min.js"></script>
+
+	<!-- Main JS -->
+	<script type="text/javascript" src="JSLibs/roomSelection.js"></script>
+
+	<!-- Router -->
+	<script type="text/javascript" src="JSLibs/BackboneJS/Router/MainRouter.js"></script>
+
+	<!-- Meeting Room Backbone -->
+	<script type="text/javascript" src="JSLibs/BackboneJS/Model/RoomModel.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/Collections/RoomCollection.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/View/RoomView.js"></script>
+
+	<!-- Meeting Type Backbone -->
+	<script type="text/javascript" src="JSLibs/BackboneJS/Model/MeetingTypeModel.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/Collections/MeetingTypeCollection.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/View/MeetingTypeView.js"></script>
+
+	<!-- Time Slot Generation Backbone -->
+	<script type="text/javascript" src="JSLibs/BackboneJS/Model/TimeSlotModel.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/Collections/TimeSlotCollection.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/View/TimeSlotView.js"></script>
+
+	<!-- Creating Customer Details Backbone -->
+	<script type="text/javascript" src="JSLibs/BackboneJS/Model/CreateCustomerModel.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/Collections/CreateCustomerCollection.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/View/CreateCustomerView.js"></script>
+
+	<!-- Fetching Customer Details Backbone -->
+	<script type="text/javascript" src="JSLibs/BackboneJS/Model/FetchCustomerModel.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/Collections/FetchCustomerCollection.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/View/FetchCustomerView.js"></script>
+
+	<!-- Creating Appointment Backbone -->
+	<script type="text/javascript" src="JSLibs/BackboneJS/Model/CreateAppointmentModel.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/Collections/CreateAppointmentCollection.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/View/CreateAppointmentView.js"></script>
+
+</body>
+</html>

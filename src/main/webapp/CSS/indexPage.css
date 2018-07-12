@@ -1,0 +1,23 @@
+.jumbotron{
+    text-align: center
+}
+
+.credential-box{
+    width: 85%;
+}
+
+#social > a {
+    text-align: center;
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+#googleLogin{
+    background-color:#ff4d4d;
+    color: aliceblue;
+}
+
+#facebookLogin{
+    background-color: #0073e6;
+    color: aliceblue;
+}

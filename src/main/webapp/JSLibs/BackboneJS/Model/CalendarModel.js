@@ -1,0 +1,1 @@
+var CalendarsModel = Backbone.Model.extend({});

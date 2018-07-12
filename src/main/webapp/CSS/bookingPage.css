@@ -1,0 +1,81 @@
+body{
+	background: url("https://i.pinimg.com/originals/7d/94/a1/7d94a136a7480b95dba6bbba1c2dc370.jpg") no-repeat center center fixed;
+}
+
+h1{
+	padding: 3%;
+}
+
+h3{
+	padding: 3%
+}
+
+li{
+	margin-left: 12%;
+}
+
+form{
+	margin-left: 13%;
+}
+
+li:hover{
+	cursor: pointer;
+	color: #f94502;
+}
+
+.container{
+	margin: 3%;
+	height: 700px;
+	background-color: #8ce2c3;
+	opacity: 0.8;
+}
+
+#BookingPageContainer{
+	padding-left: 9%;
+}
+
+.list-group{
+	position: relative;
+	display: inline;
+	height: 400px;
+	width: 700px;
+	text-align: center;
+	overflow: scroll;
+}
+
+.list-group > ul{
+	width: 27%;
+	text-align: center;
+	display: inline;
+	margin: 0.5%;
+}
+
+.list-group-item{
+	padding: 0px;
+	width: 100%;
+	margin: 2%;
+}
+
+#inviteList{
+	background-color: #fff;
+	margin-left: 13%;
+	min-height: 100%;
+}
+
+#inviteList > li {
+	margin-left: -30px;
+	font-size: 15px;
+	cursor: none;
+	color: #000;
+	overflow: scroll;
+}
+
+#inviteList > li > span {
+	float: right;
+	cursor: pointer;
+	color: #f94502;
+}
+
+ul#invitePeople{
+	overflow-y: scroll; 
+}

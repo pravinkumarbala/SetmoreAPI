@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en">
+  <head>
+    <meta http-equiv="content-type" content="application/xhtml+xml; charset=UTF-8" />
+    <link rel="stylesheet" type="text/css" href="CSS/indexPage.css">
+    <link rel="stylesheet" type="text/css" href="JSLibs/Bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Welcome Page</title>
+  </head>
+  <body>
+      <div class="container">
+        <div class="jumbotron">
+          <h2>Meeting Room</h2>
+        </div>
+
+        <div class="container">
+          <div class="col align-self-center">
+            <form>
+              <h3>Login</h3>
+              <br><br>
+              
+              <!-- Email Address -->
+              <div class="form-group row">
+                  <label for="emailAddress" class="col-sm-2 col-form-label">Email : </label>
+                  <div class="col-sm-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <img src="Image/Icon/glyphicons-11-envelope.png">
+                        </span>
+                      </div>
+                      <input type="email" class="form-control" placeholder="EmailAddress" id="emailAddress">
+                    </div>
+                  </div>
+              </div>
+
+              <!-- Password -->
+              <div class="form-group row">
+                  <label for="password" class="col-sm-2 col-form-label">Password : </label>
+                  <div class="col-sm-7">
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <span class="input-group-text">
+                          <img src="Image/Icon/glyphicons-31-pencil.png">
+                        </span>
+                      </div>
+                      <input type="password" class="form-control" placeholder="Password" id="password">
+                    </div>
+                  </div>
+              </div>
+
+              <br><br>
+              <div class="form-group row">
+                <input class="btn btn-primary" value="Login">
+                <input class="btn btn-default" value="Signup">
+              </div>
+            </form>
+            <br><br>
+            <div class="form-group row" id="social">
+              <a class="form-control col-sm-2" id="googleLogin"><i class="fa fa-google"></i>   Google</a>
+              <a class="form-control col-sm-2" id="facebookLogin"><i class="fa fa-facebook"></i>  Facebook</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script type="text/javascript" src="JSLibs/jquery.min.js"></script>
+      <script type="text/javascript" src="JSLibs/Bootstrap/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="JSLibs/main.js"></script>
+  </body>
+</html>

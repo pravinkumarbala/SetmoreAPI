@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calendar Page</title>
+	<link rel="stylesheet" type="text/css" href="CSS/fullcalendar.css">
+	<link rel="stylesheet" type="text/css" href="CSS/calendarPage.css">
+	<link rel="stylesheet" type="text/css" href="JSLibs/Bootstrap/css/bootstrap.min.css">
+</head>
+<body>
+	<nav class="navbar navbar-dark bg-dark">
+		<a class="navbar-brand" href="#">Calendar</a>
+	</nav>
+	<br>
+	<div class="sidenav">
+		<div>
+			<img src="Image/Icon/glyphicons-138-cogwheels.png">
+			<a href="#">Settings</a>
+		</div>
+	</div>
+	<div class="container">
+		<div id="calendar"></div>
+	</div>
+	
+	<!-- General Libraries -->
+	<script type="text/javascript" src="JSLibs/jquery.min.js"></script>
+	<script type="text/javascript" src="JSLibs/Bootstrap/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="JSLibs/moment.min.js"></script>
+	<script type="text/javascript" src="JSLibs/fullcalendar.js"></script>
+	<script type="text/javascript" src="JSLibs/underscore-min.js"></script>
+	<script type="text/javascript" src="JSLibs/backbone-min.js"></script>
+
+	<!-- Calendar Backbone JS-->
+	<script type="text/javascript" src="JSLibs/BackboneJS/Model/CalendarModel.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/Collections/CalendarCollection.js"></script>
+	<script type="text/javascript" src="JSLibs/BackboneJS/View/CalendarView.js"></script>
+	
+	<!-- Main JS -->
+	<script type="text/javascript" src="JSLibs/calendarSelection.js"></script>
+
+</body>
+</html>
